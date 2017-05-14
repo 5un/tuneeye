@@ -1,0 +1,33 @@
+.dropzone {
+  text-align: center;
+  margin: auto;
+  background: #eeeeee;
+  width: 100%;
+  padding: 40px;
+  border: 4px dashed #cccccc;
+  color: #cccccc;
+  border-radius: 4px;
+}
+
+.footer {
+  font-size: 12px;
+}
+
+.shareBtn {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.resetBtn {
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 25px;
+  padding: 10px;
+  border: 0;
+  min-width: 100px;
+  margin-top: 20px;
+}
+
+.shareSection {
+  margin-top: 20px;
+}

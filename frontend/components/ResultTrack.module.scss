@@ -1,0 +1,125 @@
+/* @import "compass/css3"; */
+
+$vinyl-color-1: #333;
+$vinyl-color-2: #8F005C;
+$vinyl-color-3: #21BFF1;
+
+.coverAndVinylContainer {
+  position: relative;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.cover {
+  left: calc(50% - 100px);
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 2px 2px 2px rgba(0,0,0,0.2);
+  z-index: 2; 
+  transition: transform 0.5s;
+  transform: translateX(0px);
+}
+
+.coverOpen {
+  transform: translateX(-100px);
+}
+
+.coverXray {
+  animation:xray 1s 0s infinite;
+}
+
+.vinylContainer {
+  left: calc(50% - 100px);
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transition: transform 0.5s;
+  transform: translateX(0px);
+}
+
+.vinylContainerOpen {
+  transform: translateX(100px);
+}
+
+.picture {
+  width: 50px;
+  height: 50px;
+  margin: 50px;
+  z-index: 1; 
+}
+
+@mixin create-vinyl($color) {
+  /**Size**/
+  width: 120px;
+  height: 120px;
+  
+  /**Animation**/
+  animation:play 15s 0s infinite;
+  transform:rotate(0deg); 
+  animation-timing-function: linear;
+  
+  /**Vinyl**/
+  box-shadow: 0 0 0 5px $color, 
+              0 0 0 6px darken($color,10), 
+              0 0 0 7px $color, 
+              0 0 0 8px darken($color,10), 
+              0 0 0 9px $color, 
+              0 0 0 10px darken($color,10), 
+              0 0 0 11px $color, 
+              0 0 0 12px darken($color,10), 
+              0 0 0 13px $color, 
+              0 0 0 14px darken($color,10), 
+              0 0 0 15px $color, 
+              0 0 0 16px darken($color,10), 
+              0 0 0 17px $color, 
+              0 0 0 18px darken($color,10), 
+              0 0 0 19px $color, 
+              0 0 0 20px darken($color,10), 
+              0 0 0 21px $color, 
+              0 0 0 22px darken($color,10), 
+              0 0 0 23px $color, 
+              0 0 0 24px darken($color,5), 
+              0 0 0 25px $color, 
+              0 0 0 30px darken($color,10);
+  border-radius: 50%;
+}
+
+@keyframes play {
+  0% {
+
+    transform:rotate(0deg);
+  }
+  100% {
+
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes xray {
+  0% {
+    filter: invert(0%);
+  }
+  50% {
+    filter: invert(100%);
+  }
+  100% {
+    filter: invert(0%);
+  }
+}
+
+.vinyl1{
+  @include create-vinyl($vinyl-color-1);
+}
+
+.vinyl2{
+  @include create-vinyl($vinyl-color-2);
+}
+
+.vinyl3{
+  @include create-vinyl($vinyl-color-3);
+}
+
